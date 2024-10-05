@@ -7,8 +7,8 @@ import { FaTrash } from "react-icons/fa";
 interface TaskProps {
   task: Todo;
   onUpdateStatus: (id: string, status: string) => void;
-  onEdit: (task: Todo) => void; // Edit için prop ekledik
-  onDelete: (id: string) => void; // Delete için prop ekledik
+  onEdit: (task: Todo) => void;
+  onDelete: (id: string) => void;
 }
 
 const Task: React.FC<TaskProps> = ({ task, onEdit, onDelete }) => {

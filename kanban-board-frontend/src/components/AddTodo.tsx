@@ -45,8 +45,7 @@ const AddTodo: React.FC<AddTodoProps> = ({ todoToEdit, setTodoToEdit, setTasks }
     }
   
     if (todoToEdit) {
-      // 'todoToEdit._id' tipini kontrol et
-      await putTodo(todoToEdit._id as string, todoInfo); // Eğer _id string ise
+      await putTodo(todoToEdit._id as string, todoInfo);
       setTasks((prevTasks: Todo[]) => 
         prevTasks.map((task: Todo) => 
           task._id === todoToEdit?._id ? { ...task, ...todoInfo } : task
@@ -56,7 +55,7 @@ const AddTodo: React.FC<AddTodoProps> = ({ todoToEdit, setTodoToEdit, setTasks }
     } else {
       const newTodo = await postTodo(todoInfo);
       if (newTodo) {
-        setTasks((prevTasks: Todo[]) => [...prevTasks, newTodo as Todo]); // newTodo'yu Todo olarak belirledik
+        setTasks((prevTasks: Todo[]) => [...prevTasks, newTodo as Todo]);
 
       }
     }

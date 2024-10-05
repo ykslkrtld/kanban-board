@@ -7,8 +7,8 @@ interface ColumnProps {
   title: string;
   tasks: Todo[];
   onUpdateStatus: (id: string, status: string) => void;
-  onEditTask: (task: Todo) => void;  // Edit için prop ekledik
-  onDeleteTask: (id: string) => void;  // Delete için prop ekledik
+  onEditTask: (task: Todo) => void;
+  onDeleteTask: (id: string) => void;
 }
 
 const Column: React.FC<ColumnProps> = ({ title, tasks, onUpdateStatus, onEditTask, onDeleteTask }) => {

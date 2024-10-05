@@ -1,8 +1,7 @@
 import axios from 'axios';
 
-// Define the Todo type
 interface Todo {
-  id?: string; // Optional if you're not including it in creation
+  id?: string;
   title: string;  
   status?: string;
 }
@@ -11,7 +10,7 @@ const useTodoCalls = () => {
   const getTodo = async () => {
     try {
       const { data } = await axios.get("http://localhost:8000/todos/");
-      return data.data; // Return new data
+      return data.data;
     } catch (error) {
       console.log(error);
     }
@@ -20,7 +19,7 @@ const useTodoCalls = () => {
   const postTodo = async (data: Todo): Promise<Todo | undefined> => {
     try {
       const response = await axios.post("http://localhost:8000/todos/", data);
-      return response.data.data; // Return the newly added task
+      return response.data.data;
     } catch (error) {
       console.error("Görev eklenirken bir hata oluştu:", error);
     }

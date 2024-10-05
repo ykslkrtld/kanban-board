@@ -1,7 +1,7 @@
 export interface Todo {
-    _id?: string; // veya number, veri tabanının tipine göre
+    _id?: string;
     title: string;
     description: string;
-    status?: string; // yeni eklenen satır
+    status?: string;
   }
   
