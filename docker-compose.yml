@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: kanban-board-backend/Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - HOST=0.0.0.0
+      - PORT=8000
+      - MONGODB=mongodb+srv://yukselkurtuldu9:dQWrkWMQZUnElZuf@cluster0.owtbac0.mongodb.net/kanbanBoard
+    volumes:
+      - ./kanban-board-backend:/usr/src/app
+    networks:
+      - kanban-network
+
+  frontend:
+    build:
+      context: .
+      dockerfile: kanban-board-frontend/Dockerfile
+    ports:
+      - "5173:80"
+    networks:
+      - kanban-network
+
+networks:
+  kanban-network:
+    driver: bridge
